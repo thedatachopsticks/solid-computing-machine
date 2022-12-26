@@ -1,0 +1,56 @@
+{
+  "data_asset_type": null,
+  "expectation_suite_name": "rides.ride_data.warning",
+  "expectations": [
+    {
+      "expectation_type": "expect_table_columns_to_match_ordered_list",
+      "kwargs": {
+        "column_list": [
+          "vendor_id",
+          "pickup_datetime",
+          "dropoff_datetime",
+          "passenger_count",
+          "trip_distance",
+          "rate_code_id",
+          "store_and_fwd_flag",
+          "pickup_location_id",
+          "dropoff_location_id",
+          "payment_type",
+          "fare_amount",
+          "extra",
+          "mta_tax",
+          "tip_amount",
+          "tolls_amount",
+          "improvement_surcharge",
+          "total_amount",
+          "congestion_surcharge"
+        ]
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_table_row_count_to_be_between",
+      "kwargs": {
+        "max_value": 200000,
+        "min_value": 4000
+      },
+      "meta": {}
+    }
+  ],
+  "ge_cloud_id": null,
+  "meta": {
+    "citations": [
+      {
+        "batch_request": {
+          "data_asset_name": "rides.ride_data",
+          "data_connector_name": "default_inferred_data_connector_name",
+          "datasource_name": "psql_taxi_datasource",
+          "limit": 1000
+        },
+        "citation_date": "2022-12-26T11:31:39.642242Z",
+        "comment": "Created suite added via CLI"
+      }
+    ],
+    "great_expectations_version": "0.15.41"
+  }
+}

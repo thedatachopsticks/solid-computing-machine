@@ -1,0 +1,40 @@
+{
+  "data_asset_type": null,
+  "expectation_suite_name": "taxi_expectation.warning",
+  "expectations": [
+    {
+      "expectation_type": "expect_column_to_exist",
+      "kwargs": {
+        "column": "passenger_count",
+        "column_index": 3
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_between",
+      "kwargs": {
+        "column": "passenger_count",
+        "max_value": 20,
+        "min_value": 1,
+        "mostly": 0.8
+      },
+      "meta": {}
+    }
+  ],
+  "ge_cloud_id": null,
+  "meta": {
+    "citations": [
+      {
+        "batch_request": {
+          "data_asset_name": "yellow_tripdata_sample_2019-01.csv",
+          "data_connector_name": "default_inferred_data_connector_name",
+          "datasource_name": "taxi_datasource",
+          "limit": 1000
+        },
+        "citation_date": "2022-12-26T08:02:24.404726Z",
+        "comment": "Created suite added via CLI"
+      }
+    ],
+    "great_expectations_version": "0.15.41"
+  }
+}
