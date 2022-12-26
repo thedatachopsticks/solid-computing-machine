@@ -8,5 +8,5 @@ This repo is structured to talk about different setups in apache airflow. Here i
 - data validation (example for data validation)
 - cloud interaction
 - local spark cluster for data processing
-- deployment methods
-
+- deployment methods through http
+- deployment methods through https
