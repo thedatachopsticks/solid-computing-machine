@@ -1,0 +1,17 @@
+FROM apache/airflow:2.5.0
+USER root
+
+RUN apt-get update 
+#   && apt-get install -y --no-install-recommends \
+#          build-essential gnumeric  \
+#   && apt-get autoremove -yqq --purge \
+#   && apt-get clean \
+#   && rm -rf /var/lib/apt/lists/*
+
+COPY requirements.txt /requirements.txt
+COPY /dags /opt/airflow/dags
+COPY /plugins /opt/airflow/plugins
+
+USER airflow
+RUN pip install --user --upgrade pip && \
+     pip install --no-cache-dir --user -r /requirements.txt
